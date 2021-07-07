@@ -218,6 +218,9 @@ assign [class="Nautilus"] $ws5
 exec pavucontrol
 assign [class="Pavucontrol"] $ws6
 
+# Assign Zoom to workspace 7
+assign [class="zoom"] $ws7
+
 # Open Discord to workspace 8
 exec discord
 assign [class="discord"] $ws8
@@ -228,11 +231,32 @@ exec spotify
 assign [class="Spotify"] $ws9
 for_window [class="Spotify"] move to workspace $ws9
 
+# Assign Steam to workspace 10
+assign [class="Steam"] $ws10
+
+
 ### Bind application shortcuts ###
 
 # Bind Brave to mod+b
 bindsym $mod+b exec brave-browser
 
 # Bind Nautilus to mod+n
-bindsym $mod+n exec brave-browser
+bindsym $mod+n exec nautilus
+
+### Bind Print Screen to prtsc ###
+
+# Bind Print to standard print screen save file
+bindsym Print exec gnome-screenshot -i
+
+# bindsym Print exec scrot '/tmp/%F_%T_$wx$h.png' -se 'xclip -selection clipboard -target image/png -i $f' 
+# bindsym --release Print exec --no-startup-id scrot 'test.png'
+
+# Bind mod+Print to standard print screen save file for focused window
+# bindsym --release $mod+Shift+Print exec --no-startup-id scrot -u '$HOME/Pictures/Screenshots/%F_%T_$wx$h.png' 
+
+# Bind Shift+Print to save selected screen rectangle to clipboard
+# bindsym --release shift+Print exec --no-startup-id scrot '/tmp/%F_%T_$wx$h.png' -se 'xclip -selection clipboard -target image/png -i $f'
+
+# Bind mod+Shift+Print to save selected screen rectangle as a file
+# bindsym --release $mod+Print exec --no-startup-id scrot -s '$HOME/Pictures/Screenshots/%F_%T_$wx$h.png'
 
