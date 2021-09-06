@@ -120,12 +120,28 @@ alias gdiff="git diff"
 alias sai="sudo apt install -y"
 alias saif="sudo apt install -y -f"
 
+# Command for restarting pulseaudio
+# pulseaudio -k
+
+
+# cd shortcuts
+alias cs161="cd ~/Repos/Berkeley-Code/CS-161"
+alias cs162="cd ~/Repos/Berkeley-Code/CS-162/cs162-vm"
+alias cs188="cd ~/Repos/Berkeley-Code/CS-188"
+
 # Random commands
 mkcdir ()
 {
     mkdir -p -- "$1" &&
       cd -P -- "$1"
 }
+
+# Pyenv config
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 # Adding npm global packages to path
 NPM_PACKAGES="${HOME}/.npm-packages"
